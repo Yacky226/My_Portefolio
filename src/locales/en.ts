@@ -25,62 +25,62 @@ export const en = {
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Sawadogo Wamanegba Yacouba",
-    "title": "Student in Software Engineering and Computer Systems Integration (Final Year)",
-    "description": "Passionate about building innovative solutions and learning cutting-edge technologies. Currently seeking internship and entry-level opportunities to launch my career in software development.",
+    "title": "Final-year Software Engineering undergraduate at FSTM Mohammedia (Hassan II University)",
+    "description": "Focused on web/mobile development, geospatial systems (PostGIS), and simulation/forecasting (SUMO, ARIMA). Currently seeking a PhD position.",
     "cta_primary": "View My Projects",
     "cta_secondary": "Download Resume",
     "stats": {
       "experience": "5+ Years Learning",
-      "projects": "15+ Projects Built",
-      "clients": "1+ Internships"
+      "projects": "7+ Academic Projects",
+      "clients": "1 Completed Internship"
     },
     "badge_available": "Available for hire",
     "badge_coding": "Currently coding"
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Dedicated student passionate about software engineering and technology",
-    "description": "I'm a final year Software Engineering student with a strong foundation in computer science principles and hands-on experience in modern development practices. Through coursework, personal projects, and internships, I've developed skills in full-stack development and a passion for solving complex problems through code.",
+    "subtitle": "Software engineering undergraduate building data-driven and geospatial applications",
+    "description": "I am a final-year Software Engineering undergraduate at FSTM Mohammedia with project experience across web and mobile applications, GIS systems using PostGIS, and forecasting/simulation using ARIMA and SUMO. I enjoy transforming technical ideas into practical products and research-oriented solutions.",
     "skills_title": "Technical Skills",
     "timeline_title": "Academic & Professional Journey",
-    "location": "Remote Worldwide",
+    "location": "Mohammedia, Morocco",
     "location_status": "Available for work",
     "image_alt": "Yacouba - Software Engineer",
     "achievements": [
       { "title": "5+ Years", "subtitle": "Learning & Building" },
-      { "title": "15+ Projects", "subtitle": "Successfully Delivered" },
+      { "title": "7+ Projects", "subtitle": "Successfully Delivered" },
       { "title": "10+ Technologies", "subtitle": "Hands-on Experience" }
     ],
     "data": {
       "skills": [
-        { "name": "JavaScript / TypeScript", "level": 80 },
-        { "name": "React / React Native", "level": 85 },
-        { "name": "Node.js / Express", "level": 88 },
-        { "name": "C / C++", "level": 80 },
-        { "name": "PostgreSQL / MongoDB", "level": 90 },
-        { "name": "Docker", "level": 80 },
-        { "name": "REST APIs", "level": 90 },
-        { "name": "Java / Spring Boot", "level": 80 }
+        { "name": "Java / Spring Boot / Java EE", "level": 88 },
+        { "name": "JavaScript / React / React Native", "level": 86 },
+        { "name": "SQL / PostgreSQL / PostGIS", "level": 90 },
+        { "name": "Python / ARIMA", "level": 80 },
+        { "name": "Node.js / Express / NestJS", "level": 84 },
+        { "name": "C++ / Drogon", "level": 82 },
+        { "name": "MongoDB / Docker / REST APIs", "level": 85 },
+        { "name": "SUMO Traffic Simulation", "level": 78 }
       ]
     },
     "timeline": [
       {
         "year": "2025",
-        "title": "Software Engineering Intern",
-        "company": "GTEL Developpement",
-        "description": "Developed features for web applications and collaborated with senior developers on production systems."
+        "title": "IT Intern",
+        "company": "Global Telecommunication Development (Casablanca)",
+        "description": "Developed an online store management web platform as part of an end-of-year internship project."
       },
       {
-        "year": "2023",
-        "title": "Began Diploma in Software Engineering and Computer Systems Integration",
-        "company": "Faculty of Science and Technology of Mohammedia - Hassan II University",
-        "description": "Commencement of a new study cycle focused on in-depth learning of software development technologies."
+        "year": "2023 - 2026",
+        "title": "Software Engineering Degree",
+        "company": "Faculty of Sciences and Techniques, Mohammedia (Hassan II University)",
+        "description": "Advanced training in software engineering, distributed systems, and applied development."
       },
       {
-        "year": "2021",
-        "title": "Began Diploma in Mathematics and Computer Science",
-        "company": "University of Abdelmalek Essaadi",
-        "description": "Began comprehensive study of computer science fundamentals, algorithms, and software architecture."
+        "year": "2021 - 2023",
+        "title": "DEUG in Mathematics and Computer Science",
+        "company": "Faculty of Sciences, Tetouan",
+        "description": "Built strong foundations in algorithms, mathematics, and core computer science."
       }
     ]
   },
@@ -157,6 +157,18 @@ export const en = {
         "description": "A tool for automating the generation of sales analysis reports, providing insights and visualizations for better decision-making.",
         "tags": "C++|ETL|Power BI|SQL",
         "impact": "University project"
+      },
+      "10": {
+        "title": "Parkourt Mobile Application",
+        "description": "Mobile application with geospatial features and backend APIs for location-aware experiences.",
+        "tags": "React Native|NestJS|PostgreSQL|PostGIS",
+        "impact": "Academic project"
+      },
+      "11": {
+        "title": "Digital Heritage Mobile App",
+        "description": "Mobile app for digital heritage data access and content exploration.",
+        "tags": "React Native|PostgreSQL|MongoDB",
+        "impact": "Academic project"
       }
 
     }
@@ -265,8 +277,8 @@ export const en = {
       "email_label": "Email",
       "location_label": "Location",
       "response_label": "Response Time",
-      "email": "sawadogoyacouba52@gmail.com",
-      "location": "Available for remote work and local opportunities",
+      "email": "sawadogowamanegba@gmail.com",
+      "location": "Mohammedia, Morocco (remote and on-site opportunities)",
       "response_time": "Usually responds within 24 hours"
     }
   },
@@ -368,7 +380,7 @@ export const en = {
   "footer": {
     "brand": {
       "name": "Yacouba",
-      "description": "Final-year Software Engineering student passionate about building innovative solutions. Open to internship opportunities and collaborative projects."
+      "description": "Final-year Software Engineering undergraduate focused on geospatial systems, simulation, and applied software research."
     },
     "connect_title": "Connect with me",
     "quick_links_title": "Quick Links",
@@ -377,9 +389,9 @@ export const en = {
       "email_label": "Email",
       "location_label": "Location",
       "availability_label": "Availability",
-      "email": "sawadogoyacouba52@gmail.com",
-      "location": "Remote Worldwide",
-      "availability": "Open for new projects"
+      "email": "sawadogowamanegba@gmail.com",
+      "location": "Mohammedia, Morocco",
+      "availability": "Seeking PhD opportunities"
     },
     "social": {
       "github": "GitHub",
@@ -387,7 +399,7 @@ export const en = {
       "twitter": "Twitter",
       "email": "Email"
     },
-    "copyright": "© {year} Yacouba. All rights reserved.",
+    "copyright": "(c) {year} Yacouba. All rights reserved.",
     "built_with": "Built with React & TypeScript",
     "back_to_top": "Back to top"
   },
@@ -417,9 +429,9 @@ export const en = {
     "print": "Print"
   },
   "meta": {
-    "title": "Yacouba - Final Year Software Engineering Student",
-    "description": "Dedicated software engineering student seeking internship and entry-level opportunities. Experienced in full-stack development, modern frameworks, and collaborative development practices.",
-    "keywords": "software engineering student, computer science, internship, entry-level developer, React, Node.js, TypeScript, web development"
+    "title": "Yacouba - Final-year Software Engineering Undergraduate",
+    "description": "Portfolio of Sawadogo Wamanegba Yacouba, focusing on web/mobile engineering, PostGIS geospatial systems, and SUMO/ARIMA simulation and forecasting. Seeking a PhD position.",
+    "keywords": "software engineering, phd candidate, postgis, sumo, arima, react native, spring boot, geospatial systems"
   },
   "errors": {
     "downloadFailed": "Error downloading resume",

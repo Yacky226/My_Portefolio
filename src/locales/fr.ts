@@ -25,72 +25,72 @@ export const fr = {
   "hero": {
     "greeting": "Salut, je suis",
     "name": "Sawadogo Wamanegba Yacouba",
-    "title": "Étudiant Ingenierie Logicielle et Intégration des Systèmes Informatiques (Dernière Année)",
-    "description": "Passionné par la création de solutions innovantes et l'apprentissage de technologies de pointe. Actuellement à la recherche de stages et d'opportunités de niveau débutant pour lancer ma carrière en développement logiciel.",
+    "title": "Etudiant en derniere annee en Genie Logiciel a la FSTM Mohammedia (Universite Hassan II)",
+    "description": "Experience en developpement web/mobile, systemes geospatiaux (PostGIS) et simulation/prevision (SUMO, ARIMA). Je recherche actuellement une opportunite de PhD.",
     "cta_primary": "Voir Mes Projets",
-    "cta_secondary": "Télécharger CV",
+    "cta_secondary": "Telecharger CV",
     "stats": {
-      "experience": "5+ Années d'Apprentissage",
-      "projects": "15+ Projets Réalisés",
-      "clients": "1+ Stages"
+      "experience": "5+ Annees d'Apprentissage",
+      "projects": "7+ Projets Academiques",
+      "clients": "1 Stage Realise"
     },
     "badge_available": "Disponible",
     "badge_coding": "En train de coder"
   },
   "about": {
-    "title": "À Propos",
-    "subtitle": "Étudiant dévoué passionné par le génie logiciel et la technologie",
-    "description": "Je suis un étudiant en dernière année de Génie Logiciel avec une solide base en principes informatiques et une expérience pratique des pratiques de développement modernes. À travers les cours, projets personnels et stages, j'ai développé des compétences en développement full-stack et une passion pour résoudre des problèmes complexes par le code.",
-    "skills_title": "Compétences Techniques",
-    "timeline_title": "Parcours Académique & Professionnel",
-    "location": "À distance - Mondial",
+    "title": "A Propos",
+    "subtitle": "Etudiant en genie logiciel oriente applications data et geospatiales",
+    "description": "Je suis en derniere annee de genie logiciel a la FSTM Mohammedia. J'ai travaille sur des applications web et mobiles, des systemes GIS avec PostGIS, ainsi que des projets de prevision et simulation avec ARIMA et SUMO. Mon objectif est de transformer des idees techniques en solutions utiles et orientees recherche.",
+    "skills_title": "Competences Techniques",
+    "timeline_title": "Parcours Academique & Professionnel",
+    "location": "Mohammedia, Maroc",
     "location_status": "Disponible pour travail",
-    "image_alt": "Yacouba - Ingénieur Logiciel",
+    "image_alt": "Yacouba - Ingenieur Logiciel",
     "achievements": [
-      { "title": "5+ Ans", "subtitle": "Apprentissage & Création" },
-      { "title": "15+ Projets", "subtitle": "Réalisés avec succès" },
-      { "title": "10+ Technologies", "subtitle": "Expérience pratique" }
+      { "title": "5+ Ans", "subtitle": "Apprentissage & Creation" },
+      { "title": "7+ Projets", "subtitle": "Realises avec succes" },
+      { "title": "10+ Technologies", "subtitle": "Experience pratique" }
     ],
     "data": {
       "skills": [
-        { "name": "JavaScript / TypeScript", "level": 80 },
-        { "name": "React / React Native", "level": 85 },
-        { "name": "Node.js / Express", "level": 88 },
-        { "name": "C / C++", "level": 80 },
-        { "name": "PostgreSQL / MongoDB", "level": 90 },
-        { "name": "Docker", "level": 80 },
-        { "name": "REST APIs", "level": 90 },
-        { "name": "Java / Spring Boot", "level": 80 }
+        { "name": "Java / Spring Boot / Java EE", "level": 88 },
+        { "name": "JavaScript / React / React Native", "level": 86 },
+        { "name": "SQL / PostgreSQL / PostGIS", "level": 90 },
+        { "name": "Python / ARIMA", "level": 80 },
+        { "name": "Node.js / Express / NestJS", "level": 84 },
+        { "name": "C++ / Drogon", "level": 82 },
+        { "name": "MongoDB / Docker / REST APIs", "level": 85 },
+        { "name": "SUMO Traffic Simulation", "level": 78 }
       ]
     },
     "timeline": [
       {
         "year": "2025",
-        "title": "Stagiaire en Génie Logiciel",
-        "company": "GTEL Developpement",
-        "description": "Développement de fonctionnalités pour applications web et collaboration avec des développeurs seniors sur des systèmes de production."
+        "title": "Stagiaire IT",
+        "company": "Global Telecommunication Development (Casablanca)",
+        "description": "Developpement d'une plateforme web de gestion de boutique en ligne dans le cadre du stage de fin d'annee."
       },
       {
-        "year": "2023",
-        "title": "Début du diplôme en Ingénierie Logicielle et Intégration des Systèmes Informatiques",
-        "company": "Faculté des Sciences et Techniques de Mohammedia - Université Hassan II",
-        "description": "Commencement d'un nouveau cycle d'étude axé sur l'apprentissage approfondi des technologies de développement logiciel."
+        "year": "2023 - 2026",
+        "title": "Cycle Genie Logiciel",
+        "company": "Faculte des Sciences et Techniques, Mohammedia (Hassan II)",
+        "description": "Formation avancee en ingenierie logicielle, systemes et developpement applique."
       },
       {
-        "year": "2021",
-        "title": "Début du Diplôme en Sciences Mathématiques et Informatiques",
-        "company": "Université Abdelmalek Essaadi",
-        "description": "Commencement d'une étude complète des fondamentaux informatiques, algorithmes et architecture logicielle."
+        "year": "2021 - 2023",
+        "title": "DEUG Mathematiques et Informatique",
+        "company": "Faculte des Sciences, Tetouan",
+        "description": "Bases solides en algorithmique, mathematiques et fondamentaux de l'informatique."
       }
     ]
   },
 
   "projects": {
     "title": "Projets Phares",
-    "subtitle": "Une vitrine de mon travail récent et de mes réalisations techniques",
+    "subtitle": "Une vitrine de mes projets academiques et techniques recents",
     "view_project": "Voir le Projet",
-    "view_case_study": "Voir l'Étude de Cas",
-    "live_demo": "Démo en Direct",
+    "view_case_study": "Voir l'Etude de Cas",
+    "live_demo": "Demo en Direct",
     "source_code": "Code Source",
     "filter_all": "Tous",
     "filter_web": "Apps Web",
@@ -98,65 +98,77 @@ export const fr = {
     "filter_backend": "Backend",
     "search_placeholder": "Rechercher des projets...",
     "loading": "Chargement des projets...",
-    "no_results": "Aucun projet trouvé correspondant à vos critères.",
+    "no_results": "Aucun projet trouve correspondant a vos criteres.",
     "featured": "En vedette",
-    "aria_view_demo": "Voir la démo",
+    "aria_view_demo": "Voir la demo",
     "aria_view_source": "Voir le code source",
     "more_tags": "+{count} de plus",
     "data": {
       "1": {
-        "title": "Application Streaming éducatif",
-        "description": "Application web full-stack pour le streaming de vidéos éducatives avec gestion des utilisateurs, listes de lecture et lancement de sessions de stream vidéo",
-        "tags": "vue js|Spring BootL|css",
-        "impact": "en cours de déploiement"
+        "title": "Application Streaming educatif",
+        "description": "Application web full-stack pour le streaming de videos educatives avec gestion des utilisateurs, listes de lecture et sessions de streaming video.",
+        "tags": "Vue.js|Spring Boot|CSS",
+        "impact": "En cours de deploiement"
       },
       "2": {
-        "title": "Application d'annonce d'événement",
-        "description": "site web pour la création d'affiche pour les Journées Entrepreneuriales de la Jeunesse Africaine(JEJA).",
+        "title": "Application d'annonce d'evenement",
+        "description": "Site web pour la creation d'affiches pour les Journees Entrepreneuriales de la Jeunesse Africaine (JEJA).",
         "tags": "HTML|CSS|JavaScript",
-        "impact": "Présentée durant les JEJA 2025"
+        "impact": "Presentee durant les JEJA 2025"
       },
       "3": {
         "title": "Visualiseur d'Algorithmes de Labyrinthe",
-        "description": "Application interactive qui visualise les algorithmes de génération et de résolution de labyrinthes pour aider les étudiants à comprendre les algorithmes de recherche de chemin.",
+        "description": "Application interactive qui visualise les algorithmes de generation et de resolution de labyrinthes pour comprendre la recherche de chemin.",
         "tags": "SFML|C++|Algorithmes",
-        "impact": "Présentée en classe"
+        "impact": "Presentee en classe"
       },
       "4": {
         "title": "Jeu de Gladiateurs",
-        "description": "Un jeu de combat de gladiateurs implémenté en langage C. Comprend des batailles au tour par tour, des statistiques de personnage et des événements aléatoires.",
-        "tags": "C|GTK|Algorithmes|Structures de Données",
+        "description": "Jeu de combat de gladiateurs en langage C avec combats au tour par tour et statistiques de personnage.",
+        "tags": "C|GTK|Algorithmes|Structures de Donnees",
         "impact": "Projet universitaire"
       },
       "5": {
         "title": "Galerie API Unsplash",
-        "description": "Application de galerie mettant en valeur des images époustouflantes de l'API Unsplash. Comprend des fonctionnalités de recherche et de filtrage pour les nouvelles images mises à jour en temps réel.",
+        "description": "Application de galerie mettant en valeur des images de l'API Unsplash avec recherche et filtrage.",
         "tags": "HTML|Docker|JavaScript|CSS",
-        "impact": "Présentée en classe"
+        "impact": "Presentee en classe"
       },
       "6": {
-        "title": "Système de Régulation de la Congestion Routière",
-        "description": "Développement d'un système de surveillance et de régulation de la congestion routière utilisant l'analyse de données en temps réel et des algorithmes d'apprentissage automatique.",
+        "title": "Systeme de Regulation de la Congestion Routiere",
+        "description": "Systeme de surveillance et regulation de la congestion routiere base sur l'analyse en temps reel.",
         "tags": "Python|Flask|Machine Learning|React",
         "impact": "Projet en cours"
       },
       "7": {
         "title": "Plateforme e-commerce Mimi",
-        "description": "Plateforme e-commerce avec authentification des utilisateurs, gestion des produits et panier d'achat. Réalisée dans le cadre d'un projet de fin d'études.",
+        "description": "Plateforme e-commerce avec authentification utilisateurs, gestion produits et panier d'achat.",
         "tags": "Java|JEE|PostgreSQL|CSS",
-        "impact": "Présentée en classe"
+        "impact": "Presentee en classe"
       },
       "8": {
-        "title": "Chat Console Distribué",
-        "description": "Application de chat console distribué construite avec Java utilisant RMI (Remote Method Invocation) pour permettre la communication en temps réel entre plusieurs clients sur un réseau.",
-        "tags": "Java|RMI|Réseautage|Multithreading",
-        "impact": "Présentée en classe"
+        "title": "Chat Console Distribue",
+        "description": "Application de chat console distribuee en Java avec RMI pour communication en temps reel entre clients.",
+        "tags": "Java|RMI|Reseautage|Multithreading",
+        "impact": "Presentee en classe"
       },
       "9": {
         "title": "Automatisation des rapports d'analyse des ventes",
-        "description": "Un outil pour automatiser la génération de rapports d'analyse des ventes, fournissant des insights et des visualisations pour une meilleure prise de décision.",
+        "description": "Outil d'automatisation de generation de rapports d'analyse des ventes avec visualisations.",
         "tags": "C++|ETL|Power BI|SQL",
         "impact": "Projet universitaire"
+      },
+      "10": {
+        "title": "Parkourt Mobile Application",
+        "description": "Application mobile avec fonctionnalites geospatiales et API backend.",
+        "tags": "React Native|NestJS|PostgreSQL|PostGIS",
+        "impact": "Projet academique"
+      },
+      "11": {
+        "title": "Digital Heritage Mobile App",
+        "description": "Application mobile pour l'acces et l'exploration de donnees du patrimoine numerique.",
+        "tags": "React Native|PostgreSQL|MongoDB",
+        "impact": "Projet academique"
       }
     }
   },
@@ -264,8 +276,8 @@ export const fr = {
       "email_label": "Email",
       "location_label": "Localisation",
       "response_label": "Délai de réponse",
-      "email": "sawadogoyacouba52@gmail.com",
-      "location": "Disponible pour le travail à distance et les opportunités locales",
+      "email": "sawadogowamanegba@gmail.com",
+      "location": "Mohammedia, Maroc (remote et sur site)",
       "response_time": "Répond généralement dans les 24 heures"
     }
   },
@@ -368,7 +380,7 @@ export const fr = {
   "footer": {
     "brand": {
       "name": "Yacouba",
-      "description": "Étudiant en dernière année de Génie Logiciel passionné par la création de solutions innovantes. Ouvert aux stages et projets collaboratifs."
+      "description": "Etudiant en derniere annee de genie logiciel, oriente systemes geospatiaux, simulation et recherche appliquee."
     },
     "connect_title": "Connectez-vous avec moi",
     "quick_links_title": "Liens Rapides",
@@ -376,10 +388,10 @@ export const fr = {
       "title": "Prendre Contact",
       "email_label": "Email",
       "location_label": "Localisation",
-      "availability_label": "Disponibilité",
-      "email": "sawadogoyacouba52@gmail.com",
-      "location": "À distance - Mondial",
-      "availability": "Ouvert aux nouveaux projets"
+      "availability_label": "Disponibilite",
+      "email": "sawadogowamanegba@gmail.com",
+      "location": "Mohammedia, Maroc",
+      "availability": "Recherche opportunite PhD"
     },
     "social": {
       "github": "GitHub",
@@ -387,7 +399,7 @@ export const fr = {
       "twitter": "Twitter",
       "email": "Email"
     },
-    "copyright": "© {year} Yacouba. Tous droits réservés.",
+    "copyright": "(c) {year} Yacouba. Tous droits reserves.",
     "built_with": "Construit avec React & TypeScript",
     "back_to_top": "Retour en haut"
   },
@@ -417,9 +429,9 @@ export const fr = {
     "print": "Imprimer"
   },
   "meta": {
-    "title": "Yacouba - Étudiant en Génie Logiciel (Dernière Année)",
-    "description": "Étudiant dévoué en génie logiciel cherchant des stages et opportunités de niveau débutant. Expérimenté en développement full-stack, frameworks modernes et pratiques de développement collaboratif.",
-    "keywords": "étudiant génie logiciel, informatique, stage, développeur débutant, React, Node.js, TypeScript, développement web"
+    "title": "Yacouba - Etudiant en derniere annee de Genie Logiciel",
+    "description": "Portfolio de Sawadogo Wamanegba Yacouba: developpement web/mobile, systemes geospatiaux PostGIS, simulation et prevision SUMO/ARIMA. Recherche opportunite PhD.",
+    "keywords": "genie logiciel, phd, postgis, sumo, arima, react native, spring boot, systemes geospatiaux"
   },
   "errors": {
     "downloadFailed": "Échec du téléchargement du CV",
