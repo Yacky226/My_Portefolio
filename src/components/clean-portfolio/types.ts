@@ -12,6 +12,8 @@ export interface ProjectMeta {
   year: number;
   category: Category;
   featured: boolean;
+  imageFit?: "cover" | "contain";
+  imagePosition?: string;
 }
 
 export interface ProjectItem extends ProjectMeta {

@@ -1,7 +1,12 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { ImageWithFallback } from "../figma/ImageWithFallback";
-import type { Category, ProjectFilter, ProjectFilterItem, ProjectItem } from "./types";
+import { ImageWithFallback } from "../ui/ImageWithFallback";
+import type {
+  Category,
+  ProjectFilter,
+  ProjectFilterItem,
+  ProjectItem,
+} from "./types";
 
 interface PortfolioProjectsProps {
   title: string;
@@ -11,7 +16,9 @@ interface PortfolioProjectsProps {
   featuredProject?: ProjectItem;
   secondaryPrimary?: ProjectItem;
   secondaryCards: ProjectItem[];
+  additionalProjects: ProjectItem[];
   viewCaseStudyLabel: string;
+  caseStudyUrl: string;
   noResultsLabel: string;
   projectCtaTitle: string;
   projectCtaDescription: string;
@@ -30,7 +37,9 @@ export function PortfolioProjects({
   featuredProject,
   secondaryPrimary,
   secondaryCards,
+  additionalProjects,
   viewCaseStudyLabel,
+  caseStudyUrl,
   noResultsLabel,
   projectCtaTitle,
   projectCtaDescription,
@@ -69,11 +78,16 @@ export function PortfolioProjects({
                 src={featuredProject.image}
                 alt={featuredProject.title}
                 className="editorial-cover"
+                style={{
+                  objectFit: featuredProject.imageFit ?? "cover",
+                  objectPosition: featuredProject.imagePosition ?? "center",
+                }}
               />
             </div>
             <div className="editorial-featured-body">
               <p className="editorial-meta-line">
-                {featuredProject.year} / {categoryLabels[featuredProject.category]}
+                {featuredProject.year} /{" "}
+                {categoryLabels[featuredProject.category]}
               </p>
               <h3>{featuredProject.title}</h3>
               <p>{featuredProject.description}</p>
@@ -84,15 +98,16 @@ export function PortfolioProjects({
                   </span>
                 ))}
               </div>
-              <button
-                type="button"
+              <a
+                href={caseStudyUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="editorial-dark-btn"
-                onClick={onContact}
                 data-magnetic="true"
               >
                 {viewCaseStudyLabel}
                 <ArrowUpRight size={16} />
-              </button>
+              </a>
             </div>
           </article>
 
@@ -103,6 +118,10 @@ export function PortfolioProjects({
                   src={secondaryPrimary.image}
                   alt={secondaryPrimary.title}
                   className="editorial-square-cover"
+                  style={{
+                    objectFit: secondaryPrimary.imageFit ?? "cover",
+                    objectPosition: secondaryPrimary.imagePosition ?? "center",
+                  }}
                 />
                 <div>
                   <span className="editorial-meta-line">
@@ -115,11 +134,18 @@ export function PortfolioProjects({
 
             <div className="editorial-project-stack">
               {secondaryCards.map((project) => (
-                <article key={project.id} className="bento-card editorial-project-mini scroll-reveal">
+                <article
+                  key={project.id}
+                  className="bento-card editorial-project-mini scroll-reveal"
+                >
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
                     className="editorial-mini-cover"
+                    style={{
+                      objectFit: project.imageFit ?? "cover",
+                      objectPosition: project.imagePosition ?? "center",
+                    }}
                   />
                   <div>
                     <span className="editorial-meta-line">
@@ -143,6 +169,33 @@ export function PortfolioProjects({
               </article>
             </div>
           </div>
+
+          {additionalProjects.length > 0 ? (
+            <div className="editorial-project-extra-grid">
+              {additionalProjects.map((project) => (
+                <article
+                  key={project.id}
+                  className="bento-card editorial-project-extra scroll-reveal"
+                >
+                  <ImageWithFallback
+                    src={project.image}
+                    alt={project.title}
+                    className="editorial-extra-cover"
+                    style={{
+                      objectFit: project.imageFit ?? "cover",
+                      objectPosition: project.imagePosition ?? "center",
+                    }}
+                  />
+                  <div>
+                    <span className="editorial-meta-line">
+                      {project.year} / {categoryLabels[project.category]}
+                    </span>
+                    <h3>{project.title}</h3>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : null}
         </div>
       ) : (
         <div className="editorial-empty">{noResultsLabel}</div>

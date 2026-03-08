@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { blogPosts } from "../data/blogData";
+import { getBlogPosts, type BlogLanguage } from "../data/blogData";
 import { useI18n } from "../hooks/useI18n";
 import { useTheme } from "../hooks/useTheme";
 import { NAV_ITEMS, PROJECTS_META, SOCIAL_LINKS } from "./clean-portfolio/constants";
@@ -47,9 +47,13 @@ export function CleanPortfolio() {
       { threshold: 0.12 }
     );
 
-    revealElements.forEach((element) => observer.observe(element));
+    revealElements.forEach((element) => {
+      if (!element.classList.contains("reveal-active")) {
+        observer.observe(element);
+      }
+    });
     return () => observer.disconnect();
-  }, []);
+  }, [activeProjectFilter]);
 
   useEffect(() => {
     const magnets = document.querySelectorAll<HTMLElement>("[data-magnetic='true']");
@@ -115,12 +119,10 @@ export function CleanPortfolio() {
         ? projects
         : projects.filter((project) => project.category === activeProjectFilter);
 
-    return [...filtered]
-      .sort((a, b) => {
-        if (a.featured !== b.featured) return a.featured ? -1 : 1;
-        return b.year - a.year;
-      })
-      .slice(0, 6);
+    return [...filtered].sort((a, b) => {
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      return b.year - a.year;
+    });
   }, [projects, activeProjectFilter]);
 
   const projectFilters = useMemo<ProjectFilterItem[]>(() => {
@@ -180,10 +182,10 @@ export function CleanPortfolio() {
   }, [t]);
 
   const latestPosts = useMemo(() => {
-    return [...blogPosts]
+    return [...getBlogPosts(language as BlogLanguage)]
       .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
       .slice(0, 3);
-  }, []);
+  }, [language]);
 
   const navItems = useMemo(() => {
     return NAV_ITEMS.map((item) => ({
@@ -195,12 +197,13 @@ export function CleanPortfolio() {
   const featuredProject = visibleProjects[0];
   const secondaryPrimary = visibleProjects[1];
   const secondaryCards = visibleProjects.slice(2, 4);
+  const additionalProjects = visibleProjects.slice(4);
   const email = asString(t("contact.info.email"), "hello@example.com");
   const year = new Date().getFullYear();
-  const heroHeadline: [string, string, string] =
+  const heroHeadline: [string, string] =
     language === "fr"
-      ? ["Concevoir", "Digital", "Editorial."]
-      : ["Crafting", "Digital", "Editorial."];
+      ? ["Concevoir", "Digital"]
+      : ["Crafting", "Digital"];
 
   const scrollToSection = (sectionId: string) => {
     const target = document.getElementById(sectionId);
@@ -214,12 +217,15 @@ export function CleanPortfolio() {
   };
 
   const handleResumeDownload = () => {
-    const resumePath = language === "fr" ? "/resume-fr.pdf" : "/resume.pdf";
-    const fileName = language === "fr" ? "Yacouba_CV.pdf" : "Yacouba_Resume.pdf";
+    const isFrench = language === "fr";
+    const resumePath = isFrench ? "/resume-fr.pdf" : "/resume-en.pdf";
+    const fileName = isFrench ? "Yacouba_CV_FR.pdf" : "Yacouba_Resume_EN.pdf";
     const link = document.createElement("a");
     link.href = resumePath;
     link.download = fileName;
+    document.body.appendChild(link);
     link.click();
+    link.remove();
   };
 
   return (
@@ -263,7 +269,9 @@ export function CleanPortfolio() {
           featuredProject={featuredProject}
           secondaryPrimary={secondaryPrimary}
           secondaryCards={secondaryCards}
+          additionalProjects={additionalProjects}
           viewCaseStudyLabel={asString(t("projects.view_case_study"))}
+          caseStudyUrl={SOCIAL_LINKS.github}
           noResultsLabel={asString(t("projects.no_results"))}
           projectCtaTitle={asString(t("services.bottom_cta_title"))}
           projectCtaDescription={asString(t("services.bottom_cta_description"))}

@@ -1,46 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { useI18n } from '../hooks/useI18n';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { BlogPost as BlogPostType, blogPosts } from '../data/blogData';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { useI18n } from "../hooks/useI18n";
+import { ImageWithFallback } from "./ui/ImageWithFallback";
+import {
+  BlogPost as BlogPostType,
+  getBlogPostById,
+  type BlogLanguage,
+} from "../data/blogData";
 
-const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+const formatDate = (date: Date, language: BlogLanguage) => {
+  return new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   }).format(date);
 };
 
 export function BlogPost() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const foundPost = blogPosts.find(p => p.id === id);
+    const selectedLanguage = language as BlogLanguage;
+    const foundPost = id ? getBlogPostById(id, selectedLanguage) : undefined;
     setPost(foundPost || null);
     setLoading(false);
-  }, [id]);
+  }, [id, language]);
 
   const handleBack = () => {
     if (window.history.length > 1) {
       navigate(-1);
     } else {
-      navigate('/');
+      navigate("/");
     }
   };
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-        Loading...
+        {language === "fr" ? "Chargement..." : "Loading..."}
       </div>
     );
   }
@@ -48,7 +53,7 @@ export function BlogPost() {
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-        Article not found
+        {language === "fr" ? "Article introuvable" : "Article not found"}
       </div>
     );
   }
@@ -56,15 +61,17 @@ export function BlogPost() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main className="container py-20">
-       {/* Bouton de retour : marginTop fixe en pixels (ne dépend pas de Tailwind purge) */}
-        <div style={{ marginTop: '20px', marginBottom: '32px' }}>
-          <Button variant="ghost" onClick={handleBack} className="flex items-center gap-2">
+        {/* Bouton de retour : marginTop fixe en pixels (ne dépend pas de Tailwind purge) */}
+        <div style={{ marginTop: "20px", marginBottom: "32px" }}>
+          <Button
+            variant="ghost"
+            onClick={handleBack}
+            className="flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" />
-            {t ? t('blog.back') ?? 'Retour' : 'Retour'}
+            {t ? (t("blog.back") ?? "Retour") : "Retour"}
           </Button>
         </div>
-
-
 
         {/* Contenu de l'article */}
         <article className="max-w-4xl mx-auto">
@@ -78,15 +85,19 @@ export function BlogPost() {
             <div className="flex items-center space-x-4 text-sm text-muted">
               <div className="flex items-center space-x-1">
                 <Calendar className="w-4 h-4" />
-                <span>{formatDate(post.publishedAt)}</span>
+                <span>
+                  {formatDate(post.publishedAt, language as BlogLanguage)}
+                </span>
               </div>
               <div className="flex items-center space-x-1">
                 <Clock className="w-4 h-4" />
-                <span>{post.readTime} min de lecture</span>
+                <span>
+                  {post.readTime} {t("blog.read_time")}
+                </span>
               </div>
             </div>
 
-            <h1 className="text-4xl font-bold" style={{ color: 'var(--text)' }}>
+            <h1 className="text-4xl font-bold" style={{ color: "var(--text)" }}>
               {post.title}
             </h1>
 
@@ -97,9 +108,9 @@ export function BlogPost() {
                   variant="secondary"
                   className="text-xs bg-bg border-border"
                   style={{
-                    backgroundColor: 'var(--bg)',
-                    borderColor: 'var(--border)',
-                    color: 'var(--text)'
+                    backgroundColor: "var(--bg)",
+                    borderColor: "var(--border)",
+                    color: "var(--text)",
                   }}
                 >
                   {tag}
@@ -111,7 +122,7 @@ export function BlogPost() {
           <Card className="bg-surface border-border">
             <CardContent
               className="p-8 prose prose-invert max-w-none prose-headings:text-text prose-p:text-muted prose-li:text-muted"
-              style={{ color: 'var(--text)' }}
+              style={{ color: "var(--text)" }}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </Card>

@@ -1,6 +1,5 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Toaster } from "./components/ui/sonner";
 import { I18nProvider } from "./hooks/useI18n";
 import { ThemeProvider } from "./hooks/useTheme";
 import { CleanPortfolio } from "./components/CleanPortfolio";
@@ -45,12 +44,6 @@ export default function App() {
               }
             />
           </Routes>
-          <Toaster
-            position="bottom-right"
-            expand={true}
-            richColors={true}
-            closeButton={true}
-          />
         </Router>
       </I18nProvider>
     </ThemeProvider>

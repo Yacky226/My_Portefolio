@@ -1,9 +1,9 @@
 import React from "react";
 import { ArrowUpRight, Download } from "lucide-react";
-import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { ImageWithFallback } from "../ui/ImageWithFallback";
 
 interface PortfolioHeroProps {
-  headline: [string, string, string];
+  headline: [string, string];
   title: string;
   description: string;
   primaryCtaLabel: string;
@@ -37,7 +37,7 @@ export function PortfolioHero({
         <h1 className="editorial-title">
           {headline[0]} <br />
           <span className="editorial-title-italic">{headline[1]}</span> <br />
-          {headline[2]}
+        
         </h1>
         <p className="editorial-subtitle">{title}</p>
         <p className="editorial-description">{description}</p>
@@ -73,15 +73,8 @@ export function PortfolioHero({
             />
           </div>
           <h2>{profileName}</h2>
-          <p>{profileGreeting}</p>
-          <div className="editorial-id-bottom">
-            <div className="editorial-mini-chips">
-              {skillChips.map((chip) => (
-                <span key={chip}>{chip}</span>
-              ))}
-            </div>
-            <small>{profileLocation}</small>
-          </div>
+
+          
         </article>
       </div>
     </section>

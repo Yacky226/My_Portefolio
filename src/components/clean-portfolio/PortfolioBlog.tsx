@@ -1,8 +1,8 @@
 import React from "react";
 import { Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { blogPosts } from "../../data/blogData";
-import { ImageWithFallback } from "../figma/ImageWithFallback";
+import type { BlogPost } from "../../data/blogData";
+import { ImageWithFallback } from "../ui/ImageWithFallback";
 import { formatDate } from "./utils";
 
 interface PortfolioBlogProps {
@@ -10,7 +10,7 @@ interface PortfolioBlogProps {
   allPostsLabel: string;
   readTimeLabel: string;
   language: string;
-  posts: typeof blogPosts;
+  posts: BlogPost[];
 }
 
 export function PortfolioBlog({
@@ -39,7 +39,11 @@ export function PortfolioBlog({
             style={{ transitionDelay: `${index * 80}ms` }}
           >
             <div className="editorial-post-media">
-              <ImageWithFallback src={post.image} alt={post.title} className="editorial-post-cover" />
+              <ImageWithFallback
+                src={post.image}
+                alt={post.title}
+                className="editorial-post-cover"
+              />
             </div>
             <span className="editorial-post-tag">{post.tags[0]}</span>
             <h3>{post.title}</h3>

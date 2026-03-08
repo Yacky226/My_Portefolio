@@ -26,7 +26,7 @@ export const en = {
     "greeting": "Hi, I'm",
     "name": "Sawadogo Wamanegba Yacouba",
     "title": "Final-year Software Engineering undergraduate at FSTM Mohammedia (Hassan II University)",
-    "description": "Focused on web/mobile development, geospatial systems (PostGIS), and simulation/forecasting (SUMO, ARIMA). Currently seeking a PhD position.",
+    "description": "Focused on web/mobile development, geospatial systems (PostGIS), and simulation/forecasting .",
     "cta_primary": "View My Projects",
     "cta_secondary": "Download Resume",
     "stats": {
@@ -104,12 +104,7 @@ export const en = {
     "aria_view_source": "View source code",
     "more_tags": "+{count} more",
     "data": {
-      "1": {
-        "title": "Educational Streaming Application",
-        "description": "Full-stack web application for streaming educational videos with user management, playlists, and launching video stream sessions.",
-        "tags": "Vue.js|Spring Boot|CSS",
-        "impact": "Deployment in progress"
-      },
+     
       "2": {
         "title": "Event Announcement Application",
         "description": "Website for creating posters for the African Youth Entrepreneurship Days (JEJA).",
@@ -164,12 +159,7 @@ export const en = {
         "tags": "React Native|NestJS|PostgreSQL|PostGIS",
         "impact": "Academic project"
       },
-      "11": {
-        "title": "Digital Heritage Mobile App",
-        "description": "Mobile app for digital heritage data access and content exploration.",
-        "tags": "React Native|PostgreSQL|MongoDB",
-        "impact": "Academic project"
-      }
+    
 
     }
   },
@@ -306,7 +296,7 @@ export const en = {
         "content": "",
         "author": "Yacouba",
         "publishedAt": "2025-09-24",
-        "readTime": 6,
+        "readTime": 2,
         "tags": ["React", "TypeScript", "Learning"],
         "featured": true
       },
@@ -316,7 +306,7 @@ export const en = {
         "content": "",
         "author": "Yacouba",
         "publishedAt": "2024-01-10",
-        "readTime": 8,
+        "readTime": 2,
         "tags": ["Full-Stack", "Project", "Learning"],
         "featured": true
       },
@@ -326,7 +316,7 @@ export const en = {
         "content": "",
         "author": "Yacouba",
         "publishedAt": "2024-01-05",
-        "readTime": 5,
+        "readTime": 2,
         "tags": ["Internship", "Career", "Experience"],
         "featured": false
       },
@@ -336,7 +326,7 @@ export const en = {
         "content": "",
         "author": "Yacouba",
         "publishedAt": "2023-12-28",
-        "readTime": 7,
+        "readTime": 2,
         "tags": ["Interviews", "Career", "Study Tips"],
         "featured": false
       },
@@ -346,7 +336,7 @@ export const en = {
         "content": "",
         "author": "Yacouba",
         "publishedAt": "2023-12-20",
-        "readTime": 4,
+        "readTime": 2,
         "tags": ["Open Source", "GitHub", "Community"],
         "featured": false
       },
@@ -356,7 +346,7 @@ export const en = {
         "content": "",
         "author": "Yacouba",
         "publishedAt": "2023-11-15",
-        "readTime": 6,
+        "readTime": 2,
         "tags": ["Hackathon", "Teamwork", "Innovation"],
         "featured": false
       }
