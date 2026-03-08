@@ -157,6 +157,20 @@ export function PortfolioHeader({
       />
 
       <div className={`editorial-mobile-menu glass-header ${isMobileMenuOpen ? "is-open" : ""}`}>
+        <div className="editorial-mobile-menu-head">
+          <span className="editorial-mobile-menu-title">
+            {language === "fr" ? "Menu" : "Menu"}
+          </span>
+          <button
+            type="button"
+            className="editorial-mobile-close-btn"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label={language === "fr" ? "Fermer le menu" : "Close menu"}
+          >
+            <X size={16} />
+          </button>
+        </div>
+
         <div className="editorial-mobile-links">
           {navItems.map((item) => (
             <button
