@@ -35,9 +35,7 @@ export function PortfolioFooter({
               <span>{contactCta}</span>
             </h2>
             <div className="editorial-footer-links">
-              <a href={`mailto:${email}`} data-magnetic="true">
-                {email}
-              </a>
+             
             </div>
           </div>
 

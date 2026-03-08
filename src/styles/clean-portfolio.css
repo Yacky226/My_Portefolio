@@ -1136,6 +1136,7 @@
     border-radius: 1rem 0 0 1rem;
     padding: 4.8rem 0.75rem 1rem;
     overflow-y: auto;
+    touch-action: pan-y;
     transition: transform 0.25s ease, opacity 0.25s ease;
   }
 

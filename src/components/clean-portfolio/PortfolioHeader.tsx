@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Download, Languages, Menu, Moon, Sun, X } from "lucide-react";
 
 interface HeaderNavItem {
@@ -36,6 +36,8 @@ export function PortfolioHeader({
   onDownloadResume,
 }: PortfolioHeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [menuDragOffset, setMenuDragOffset] = useState(0);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
@@ -63,6 +65,13 @@ export function PortfolioHeader({
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setMenuDragOffset(0);
+      touchStartRef.current = null;
+    }
+  }, [isMobileMenuOpen]);
+
   const handleNavigate = (sectionId: string) => {
     onScrollToSection(sectionId);
     setIsMobileMenuOpen(false);
@@ -71,6 +80,49 @@ export function PortfolioHeader({
   const handleDownloadResume = () => {
     onDownloadResume();
     setIsMobileMenuOpen(false);
+  };
+
+  const handleMobileMenuTouchStart = (
+    event: React.TouchEvent<HTMLDivElement>
+  ) => {
+    const touch = event.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    setMenuDragOffset(0);
+  };
+
+  const handleMobileMenuTouchMove = (
+    event: React.TouchEvent<HTMLDivElement>
+  ) => {
+    if (!touchStartRef.current) return;
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = Math.abs(touch.clientY - touchStartRef.current.y);
+
+    // Track only a right-swipe gesture so vertical scrolling still works naturally.
+    if (deltaX > 0 && deltaY < 90) {
+      setMenuDragOffset(Math.min(deltaX, 220));
+    }
+  };
+
+  const handleMobileMenuTouchEnd = (
+    event: React.TouchEvent<HTMLDivElement>
+  ) => {
+    if (!touchStartRef.current) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = Math.abs(touch.clientY - touchStartRef.current.y);
+    const shouldClose = deltaX > 80 && deltaY < 90;
+
+    touchStartRef.current = null;
+    if (shouldClose) {
+      setIsMobileMenuOpen(false);
+      setMenuDragOffset(0);
+      return;
+    }
+
+    setMenuDragOffset(0);
   };
 
   return (
@@ -156,7 +208,20 @@ export function PortfolioHeader({
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      <div className={`editorial-mobile-menu glass-header ${isMobileMenuOpen ? "is-open" : ""}`}>
+      <div
+        className={`editorial-mobile-menu glass-header ${isMobileMenuOpen ? "is-open" : ""}`}
+        style={
+          isMobileMenuOpen
+            ? {
+                transform: `translateX(${menuDragOffset}px)`,
+                transition: menuDragOffset > 0 ? "none" : undefined,
+              }
+            : undefined
+        }
+        onTouchStart={handleMobileMenuTouchStart}
+        onTouchMove={handleMobileMenuTouchMove}
+        onTouchEnd={handleMobileMenuTouchEnd}
+      >
         <div className="editorial-mobile-menu-head">
           <span className="editorial-mobile-menu-title">
             {language === "fr" ? "Menu" : "Menu"}
